@@ -4,5 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.home, name="home"),
+    path('', views.home, name="home"), 
+    path('genPrimes/', views.genPrimes, name="genPrimes"), 
+    path('piano/', views.piano, name="piano"), 
 ]
