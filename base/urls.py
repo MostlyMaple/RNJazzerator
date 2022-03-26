@@ -8,3 +8,4 @@ urlpatterns = [
     path('genPrimes/', views.genPrimes, name="genPrimes"), 
     path('piano/', views.piano, name="piano"), 
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

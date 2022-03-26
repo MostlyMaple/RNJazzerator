@@ -4,16 +4,68 @@
        <meta charset="utf-8">
        <title>RNJazzerator</title> 
        <link rel="stylesheet" href="../../static/css/bootstrap.css">
+       
     </head>
     <body>
-        <!--NEED TO FIX HREFS-->
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="{%url 'home' %}">Home</a></li>
-			<li role="presentation" class="active"><a href="{%url 'genPrimes' %}">Gen-Primes</a></li>
-			<li role="presentation"><a href="{%url 'piano' %}">Piano</a></li>
-        </ul>
-        
-        <h1>this is gen primes</h1>
+        <!--Navbar Row-->
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-lg-6">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="{%url 'home' %}">Home</a></li>
+                    <li role="presentation" class="active"><a href="{%url 'genPrimes' %}">Gen-Primes</a></li>
+                    <li role="presentation"><a href="{%url 'piano' %}">Piano</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Title Row-->
+        <div class="row text-center">
+            <h1>Upload Here!</h1>
+        </div>
+        <!--Info row-->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h2>Title</h2>
+                    </div>
+                    <div class="panel-body">
+                        Here you can submit your audio files to be analyzed by the RNJazzerator. It will return a number that may or may not be prime lel.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h2>Upload Documents</h2>
+                    </div>
+                    <div class="panel-body">
+                        <form class="dropzone col-sm-8 col-lg-8" method="POST" action="" enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <input type="Submit" value="Upload" />
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Result Row-->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 bg-success text-center">
+                <h3>RESULT ROW</h3>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <!--Bottom Row-->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 bg-primary text-center">
+                <h3>BOTTOM ROW</h3>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
 
     </body>
 </html>
