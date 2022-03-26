@@ -7,11 +7,24 @@
     </head>
     <body>
         <!--NEED TO FIX HREFS-->
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="{%url 'home' %}">Home</a></li>
-			<li role="presentation"><a href="{%url 'genPrimes' %}">Gen-Primes</a></li>
-			<li role="presentation" class="active"><a href="{%url 'piano' %}">Piano</a></li>
-        </ul>
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-lg-6">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="{%url 'home' %}">Home</a></li>
+                    <li role="presentation"><a href="{%url 'genPrimes' %}">Gen-Primes</a></li>
+                    <li role="presentation" class="active"><a href="{%url 'piano' %}">Piano</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Bottom Row-->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 bg-primary text-center">
+                <h3>BOTTOM ROW</h3>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
 
         <h1>this is piano</h1>
     </body>
