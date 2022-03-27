@@ -144,11 +144,21 @@ def genPrimes(request):
             binKey = binKey[:-3]+'1'
             decimalNum = binToDec(binKey)
             decimalNum = decimalNum.decode('UTF-8')
+            print(decimalNum)
+            newDecimalNum = ''
+            while len(decimalNum) > 0:
+                if len(decimalNum) < 100:
+                    newDecimalNum = newDecimalNum + decimalNum[0:] + ' '
+                    decimalNum=''
+                else:
+                    newDecimalNum = newDecimalNum + decimalNum[0:100] + ' '
+                    decimalNum = decimalNum[100:]
+            print(newDecimalNum)
             isPrime=call(binKey)
             isPrime=isPrime.decode('UTF-8')
             print(isPrime)
             print(decimalNum)
-            context = {'form': form, 'isPrime':isPrime, 'decimalNum': decimalNum}
+            context = {'form': form, 'isPrime':isPrime, 'decimalNum': newDecimalNum}
             return render(request, 'gen-primes.html', context)
     isPrime = False
     decimalNum = 0
