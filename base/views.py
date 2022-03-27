@@ -1,4 +1,6 @@
 from __future__ import absolute_import, print_function, unicode_literals
+from asyncio.windows_events import NULL
+from unicodedata import decimal
 from wolframclient.evaluation import WolframCloudSession
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -7,7 +9,13 @@ import numpy as np
 import wave
 import struct
 
-
+def binToDec(x):
+    """ Call the API using function input parameter values.
+    If the API was deployed with an export formats set to JSON or WXF, the result is often a native Python type.
+    """
+    with WolframCloudSession() as session:
+        api_response = session.call('https://www.wolframcloud.com/obj/cae7dc50-b2d7-45bc-872d-3b4bd28f5523', {'x' : x})
+        return api_response.get()
 
 
 # Create your views here.
@@ -130,18 +138,21 @@ def genPrimes(request):
                 Identified_Notes.append(notes[idx])
             print(Identified_Notes)
             binKey=''
-            for i in range(171):
-	            binKey+=binVals[notes.index(Identified_Notes[i])]
+            for curNote in Identified_Notes[:171]:
+	            binKey+=binVals[notes.index(curNote)]
 
             binKey = binKey[:-3]+'1'
-            
+            decimalNum = binToDec(binKey)
+            decimalNum = decimalNum.decode('UTF-8')
             isPrime=call(binKey)
             isPrime=isPrime.decode('UTF-8')
             print(isPrime)
-
-            context = {'form': form, 'isPrime':isPrime}
+            print(decimalNum)
+            context = {'form': form, 'isPrime':isPrime, 'decimalNum': decimalNum}
             return render(request, 'gen-primes.html', context)
-    context = {'form': form}
+    isPrime = False
+    decimalNum = 0
+    context = {'form': form, 'isPrime':isPrime, 'decimalNum': decimalNum}
     return render(request, 'gen-primes.html', context)
 
 def piano(request):
