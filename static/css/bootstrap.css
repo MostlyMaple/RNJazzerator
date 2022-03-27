@@ -1373,7 +1373,7 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #E5340B;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -4097,7 +4097,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #0c5679;
 }
 .nav-stacked > li {
   float: none;
@@ -5701,22 +5701,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #337ab7;
+  border-color: #E5340B;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #E5340B;
+  border-color: #E5340B;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #337ab7;
+  border-top-color: #E5340B;
 }
 .panel-primary > .panel-heading .badge {
-  color: #337ab7;
+  color: #E5340B;
   background-color: #fff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #337ab7;
+  border-bottom-color: #E5340B;
 }
 .panel-success {
   border-color: #d6e9c6;
