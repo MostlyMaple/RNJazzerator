@@ -128,8 +128,18 @@ def genPrimes(request):
                 print(i)
                 idx = (np.abs(array-i)).argmin()
                 Identified_Notes.append(notes[idx])
-            print(Identified_Notes) 
-            context = {'form': form}
+            print(Identified_Notes)
+            binKey=''
+            for i in range(171):
+	            binKey+=binVals[notes.index(Identified_Notes[i])]
+
+            binKey = binKey[:-3]+'1'
+            
+            isPrime=call(binKey)
+            isPrime=isPrime.decode('UTF-8')
+            print(isPrime)
+
+            context = {'form': form, 'isPrime':isPrime}
             return render(request, 'gen-primes.html', context)
     context = {'form': form}
     return render(request, 'gen-primes.html', context)
