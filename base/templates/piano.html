@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <meta charset="utf-8">
-       <title>RNJazzerator</title> 
-       <link rel="stylesheet" href="../../static/css/bootstrap.css">
+      <meta charset="utf-8">
+      <title>Piano</title> 
+      <!-- style -->
+      <link rel="stylesheet" href="../../static/css/piano.css" />
+      <link rel="stylesheet" href="../../static/css/bootstrap.css">
+      <!-- favicon -->
+      <link rel="icon" href="img/piano.png" />
+      <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet"
+      />
+      <!-- required meta tags -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="var(--desert-storm)" />   
     </head>
+
     <body>
         <!--Navbar Row-->
         <div class="row">
@@ -31,40 +47,6 @@
           </div>
         </div>
 
-        <!--Bottom Row-->
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-10 bg-primary text-center">
-                <h3>BOTTOM ROW</h3>
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-        <html lang="en">
-          
-  <head>
-    <title>Piano</title>
-
-    <!-- required meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="var(--desert-storm)" />
-
-    <!-- favicon -->
-    <link rel="icon" href="img/piano.png" />
-
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- style -->
-    <link rel="stylesheet" href="../../static/css/piano.css" />
-  </head>
-  <body>
     <!-- loader start -->
     <div id="loadingDiv">
       <div class="loader"></div>
@@ -109,6 +91,7 @@
         <audio src="../../static/sounds/p.mp3" data-note="p" preload="auto"></audio>
         <audio src="../../static/sounds/semicolon.mp3" data-note=";" preload="auto"></audio>
     </header>
+    
     <main>
       <h1 class="title">Piano keyboard</h1>
       <h1 id="counter"></h1>
@@ -127,13 +110,22 @@
         </a>
       </p>
     </footer>
+  
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- script js -->
     <script src="../../static/js/piano.js"></script>
-  </body>
-        <h1>this is piano</h1>
+
+  <!--Bottom Row-->
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 bg-primary text-center">
+        <h3>BOTTOM ROW</h3>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+<html lang="en">
     </body>
 </html>
